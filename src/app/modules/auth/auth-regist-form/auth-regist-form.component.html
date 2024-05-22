@@ -1,2 +1,7 @@
 <p>auth-regist-form works!</p>
-<p-button label="Submit" />
+<span>Email:</span><input type="text" pInputText [(ngModel)]="email" />
+<span>Username:</span> <input type="text" pInputText [(ngModel)]="username" />
+<!-- <snan>Password:</snan><input type="text" pInputText [(ngModel)]="password" /> -->
+<span>Password:</span> <p-password [(ngModel)]="password" [feedback]="false" />
+
+<p-button label="Submit"  (onClick)="onSubmit()"/>
