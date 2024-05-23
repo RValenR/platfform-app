@@ -1,0 +1,8 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #1a1a1a; /* Color de fondo negro oscuro */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}

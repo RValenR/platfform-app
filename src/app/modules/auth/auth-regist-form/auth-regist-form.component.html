@@ -1,7 +1,38 @@
-<p>auth-regist-form works!</p>
+<!-- <p>auth-regist-form works!</p>
 <span>Email:</span><input type="text" pInputText [(ngModel)]="email" />
 <span>Username:</span> <input type="text" pInputText [(ngModel)]="username" />
-<!-- <snan>Password:</snan><input type="text" pInputText [(ngModel)]="password" /> -->
 <span>Password:</span> <p-password [(ngModel)]="password" [feedback]="false" />
 
 <p-button label="Submit"  (onClick)="onSubmit()"/>
+
+login
+<p-button label="Submit"  (onClick)="login()"/> -->
+
+<!-- <p-button label="Submit"  (onClick)="login()"/>  -->
+
+
+<div class="main-container" >
+    <div class="card flex align-items-center justify-content-center flex-wrap gap-3 dark-theme">
+        <div class="input-container">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="email" />
+                <label for="email">Email</label>
+            </span>
+        </div>
+        <div class="input-container">
+            <span class="p-float-label">
+                <p-password [(ngModel)]="password" [feedback]="false" />
+                <label for="password">Password</label>
+            </span>
+        </div>
+        <div class="button-container">
+            <button pButton (click)="login()" type="button" label="Login"
+                class="p-button p-component p-button-primary"></button>
+        </div>
+        <div class="register-link">
+            <a href="#" class="register-text">Registrarse</a>
+        </div>
+    </div>
+
+</div>
+<p-messages [(value)]="messages" [enableService]="false" [closable]="true" class="error-message"></p-messages>
