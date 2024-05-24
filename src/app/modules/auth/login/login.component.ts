@@ -16,12 +16,16 @@ import { MessagesModule } from 'primeng/messages';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  fireAuthService = inject(AuthService);
-  router = inject(Router);
+  // fireAuthService = inject(AuthService);
+  // router = inject(Router);
   messages = [];
   email: string = '';
   username: string = '';
   password: string = '';
+
+  constructor(private fireAuthService: AuthService, 
+    private router: Router
+  ) {}
 
   login() {
     console.log('login', this.email, this.password);
@@ -31,6 +35,7 @@ export class LoginComponent {
     }
     this.fireAuthService.signIn(userSignIn).then(resp => {
       console.log(resp);
+      this.router.navigateByUrl('home')
     }).catch(error => {
       console.error('Error during login:', error);
       this.messages = [
