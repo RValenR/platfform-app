@@ -1,0 +1,29 @@
+<div class="main-container">
+    <div class="card flex align-items-center justify-content-center flex-wrap gap-3 dark-theme">
+        <div class="input-container">
+            <span class="p-float-label">
+                <input id="email" type="text" size="30" pInputText [(ngModel)]="email">
+                <label for="email">Email</label>
+            </span>
+        </div>
+        <div class="input-container">
+            <span class="p-float-label">
+                <input id="password" type="password" size="30" pInputText [(ngModel)]="password">
+                <label for="password">Password</label>
+            </span>
+        </div>
+        <div class="input-container">
+            <span class="p-float-label">
+                <input id="confirmPassword" type="password" size="30" pInputText [(ngModel)]="confirmPassword">
+                <label for="confirmPassword">Confirm Password</label>
+            </span>
+        </div>
+        <div class="button-container">
+            <button pButton type="button" label="Register" class="p-button p-component p-button-primary" (click)="register()"></button>
+        </div>
+        <div class="login-link">
+            <a href="" class="login-text">Iniciar sesion</a>
+        </div>
+    </div>
+</div>
+<p-messages [(value)]="messages" [enableService]="false" [closable]="true" class="error-message"></p-messages>

@@ -9,13 +9,13 @@ import { FocusTrapModule } from 'primeng/focustrap';
 import { MessagesModule } from 'primeng/messages';
 
 @Component({
-  selector: 'app-auth-regist-form',
+  selector: 'app-login',
   standalone: true,
   imports: [FormsModule, ButtonModule, InputTextModule, PasswordModule, FocusTrapModule, MessagesModule],
-  templateUrl: './auth-regist-form.component.html',
-  styleUrl: './auth-regist-form.component.css'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
 })
-export class AuthRegistFormComponent {
+export class LoginComponent {
   fireAuthService = inject(AuthService);
   router = inject(Router);
   messages = [];
@@ -39,14 +39,14 @@ export class AuthRegistFormComponent {
     })
   }
 
-  onSubmit(): void {
-    console.log('register init')
-    this.fireAuthService.register(
-      this.email,
-      this.username,
-      this.password
-    ).subscribe(() => {
-      this.router.navigateByUrl('/home')
-    })
-  }
+  // onSubmit(): void {
+  //   console.log('register init')
+  //   this.fireAuthService.register(
+  //     this.email,
+  //     this.username,
+  //     this.password
+  //   ).subscribe(() => {
+  //     this.router.navigateByUrl('/home')
+  //   })
+  // }
 }
