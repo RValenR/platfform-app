@@ -27,6 +27,7 @@ export class LoginComponent {
     private router: Router
   ) {}
 
+
   login() {
     console.log('login', this.email, this.password);
     let userSignIn = {
@@ -34,7 +35,7 @@ export class LoginComponent {
       password: this.password
     }
     this.fireAuthService.signIn(userSignIn).then(resp => {
-      console.log(resp);
+      console.log('Repuesta',resp);
       this.router.navigateByUrl('home')
     }).catch(error => {
       console.error('Error during login:', error);
